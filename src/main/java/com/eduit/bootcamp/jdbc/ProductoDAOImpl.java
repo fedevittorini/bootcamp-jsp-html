@@ -94,4 +94,10 @@ public class ProductoDAOImpl implements DAO<Productos, Integer> {
 		return false;
 	}
 
+	@Override
+	public Productos save(Productos theEntity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

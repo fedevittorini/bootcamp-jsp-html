@@ -75,7 +75,7 @@ public class ClientesDAOImpl implements DAO<Clientes, String> {
 		Connection cnx = JDBCManager.getConnection(propeties);
 		Statement statement = cnx.createStatement();
 		
-		String sqlProd = "SELECT * FROM clientes ";
+		String sqlProd = "SELECT TipoDocumento, Documento, RazonSocial, Correo, FechaNacimiento, Telefono FROM clientes";
 		ResultSet rs = statement.executeQuery(sqlProd);
 		List<Clientes> output = new ArrayList<Clientes>();
 		while (rs.next()) {
@@ -83,6 +83,27 @@ public class ClientesDAOImpl implements DAO<Clientes, String> {
 			output.add(c);
 		} 
 		return output;
+	}
+	
+	@Override
+	public Clientes save(Clientes theEntity) throws Exception {
+		Connection cnx = JDBCManager.getConnection(propeties);
+		Statement statement = cnx.createStatement();
+		
+		String sqlProd = "INSERT INTO clientes (TipoDocumento, Documento, RazonSocial, Correo, FechaNacimiento, Telefono)"
+				+ " VALUES "
+				+ "('"+theEntity.getTipoDocumento()+"',"
+				+ "'"+theEntity.getDocumento()+"',"
+				+ "'"+theEntity.getRazonSocial()+"',"
+				+ "'"+theEntity.getCorreo()+"',"
+				+ "'"+theEntity.getFechaNacimiento()+"',"
+				+ "'"+theEntity.getTelefono()+"');"
+				+ " ";
+		if (statement.execute(sqlProd)) {
+			return theEntity;
+		} else {
+			return null;
+		}
 	}
 
 	private Clientes buildCliente(final ResultSet rs) throws Exception {

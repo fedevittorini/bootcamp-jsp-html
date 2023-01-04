@@ -12,6 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class UserListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		request.getServletContext().getRequestDispatcher("/user/list.jsp").forward(request, response);
 	}
 }

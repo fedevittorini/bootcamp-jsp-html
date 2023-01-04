@@ -28,11 +28,9 @@ public class Clientes implements Serializable {
     	
     }
     
-	
-    
 	public Clientes(String tipoDocumento, String documento, String razonSocial, String correo, Date fechaNacimiento,
 			String telefono) {
-		this.tipoDocumento=  tipoDocumento;
+		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 		this.razonSocial = razonSocial;
 		this.correo = correo;
@@ -83,6 +81,6 @@ public class Clientes implements Serializable {
 	}
 	
 	public String toString() {
-		return "{TipoDocumento: " + tipoDocumento + " Documento: " + documento + "}";
+		return "{TipoDocumento: [" + this.tipoDocumento + "] Documento: [" + this.documento + "] Correo: [" + this.correo + "]}";
 	}
 }

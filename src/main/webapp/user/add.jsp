@@ -7,10 +7,15 @@
 	</head>
 	<body>
 	<% 
-if (request.getAttribute("r_status") != null && (boolean) request.getAttribute("r_status")) {
-	out.println("<h1>INSERTED</h1>");
-}
-%>
+	if (request.getAttribute("r_status") != null) { 
+	  	if ((String) request.getAttribute("r_status") == "OK") {
+			out.println("<h1>INSERTED</h1>");
+	  	}
+	  	if ((String) request.getAttribute("r_status") == "ERROR") {
+			out.println("<h1>"+(String) request.getAttribute("r_msg")+"</h1>");
+	  	}
+	}
+	%>
 		<h2>Agregar usuario</h2>
 		<form action="add" method="POST">
 		  <label for="fname">Nombre:</label><br>

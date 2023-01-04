@@ -63,4 +63,10 @@ public class CategoriaDAOImpl implements DAO<Categoria, Integer> {
 		return false;
 	}
 
+	@Override
+	public Categoria save(Categoria theEntity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

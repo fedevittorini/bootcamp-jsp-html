@@ -11,16 +11,29 @@
 <title>Listado de usuarios</title>
 </head>
 <body>
+<header>
+<h1>Este es el encabezado de mi pagina</h1>
+</header>
+<nav>
+<ul>
+	<li><a href="/bootcamp-jsp-html/user/list">listado usuarios</a></li>
+	<li><a href="/bootcamp-jsp-html/user/add">agregar usuario</a></li>
+</ul>
+</nav>
+<section>
+<ul>
 <% 
-out.println("Test");
 ServletContext cntx = request.getServletContext();
 ClientesDAOImpl clientesDAOImpl = (ClientesDAOImpl) cntx.getAttribute("clientesDAOImpl");
 List<Clientes> clientes = clientesDAOImpl.getAll();
 for (Clientes c : clientes) {
-	out.println(c);
+	out.println("<li>"+ c + "</li>");
 }
 %>
-</body>
-</html>
+</ul>
+</section>
+<footer>
+<p>pie de pagina</p>
+</footer>
 </body>
 </html>
