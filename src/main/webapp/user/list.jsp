@@ -23,12 +23,12 @@
 		</nav>
 		<section id="list-grid" class="grid">
 				<ul class="grid-head">
-					<li class="small">T. Doc</li>
-					<li class="mid">Documento</li>
-					<li class="mid">RazonSocial</li>
-					<li class="large">Correo</li>
-					<li class="mid">FechaNacimiento</li>
-					<li class="mid">Telefono</li>
+					<li><div class="small">T. Doc</div></li>
+					<li><div class="mid">Documento</div></li>
+					<li><div class="mid">RazonSocial</div></li>
+					<li><div class="large">Correo</div></li>
+					<li><div class="mid">FechaNacimiento</div></li>
+					<li><div class="mid">Telefono</div></li>
 				</ul>
 				<% 
 				ServletContext cntx = request.getServletContext();
@@ -38,12 +38,12 @@
 				for (Clientes c : clientes) {
 					String stl = ((i % 2) == 0)?"0":"1";
 					out.println("<ul class=\"grid-content line-"+stl+"\">");
-					out.println("<li class=\"small\">"+ c.getTipoDocumento() + "</li>");
-					out.println("<li class=\"mid\">"+ c.getDocumento() + "</li>");
-					out.println("<li class=\"mid\">"+ c.getRazonSocial() + "</li>");
-					out.println("<li class=\"large\">"+ c.getCorreo() + "</li>");
-					out.println("<li class=\"mid\">"+ c.getFechaNacimiento() + "</li>");
-					out.println("<li class=\"mid\">"+ c.getTelefono() + "</li>");
+					out.println("<li><div class=\"small\">"+ c.getTipoDocumento() + "</div></li>");
+					out.println("<li><div class=\"mid\">"+ c.getDocumento() + "</div></li>");
+					out.println("<li><div class=\"mid\">"+ c.getRazonSocial() + "</div></li>");
+					out.println("<li><div class=\"large\">"+ c.getCorreo() + "</div></li>");
+					out.println("<li><div class=\"mid\">"+ c.getFechaNacimiento() + "</div></li>");
+					out.println("<li><div class=\"mid\">"+ c.getTelefono() + "</div></li>");
 					out.println("</ul>");
 					i++;
 				}

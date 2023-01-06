@@ -1,5 +1,6 @@
 nav ul li {
 	display: inline;
+	list-style:none;
 }
 
 nav ul li a {
@@ -17,40 +18,44 @@ nav ul li a:hover {
 
 
 .grid {
-	background-color: red;
+	background-color: #B7C3B7;
 	color: white;
+	display: inline-grid;
 }
 
 .grid-head {
+	background-color: navy;
+	border: 1px solid black;
 	color: rgb(247, 2, 2);
 }
 
 .grid ul {
 	border: 1px solid black;
+	margin: 0;
+	padding: 0;
 }
 .grid ul li {
-	background-color: navy;
-	border: 1px solid black;
-	display: inline;
+	display: table-cell;
+	list-style:none;
 }
 
-.grid .small {
+.grid ul li .small {
 	width: 100px;
 }
 
-.grid .mid {
+.grid ul li .mid {
 	width: 200px;
 }
 
-.grid .large {
+.grid ul li .large {
 	width: 400px;
 }
 
-.grid-content .line-0{
+.line-0 {
 	background-color: gray;
 }
 
-.grid-content .line-1{
+.line-1 {
 	background-color: white;
 }
 
