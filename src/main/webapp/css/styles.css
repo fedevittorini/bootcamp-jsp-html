@@ -1,0 +1,59 @@
+nav ul li {
+	display: inline;
+}
+
+nav ul li a {
+	font-family: Arial, serif;
+	font-size: 30px;
+	color: black;
+}
+
+nav ul li a:hover {
+	font-family: Arial, serif;
+	font-size: 30px;
+	color: blueviolet;
+	text-decoration: none;
+}
+
+
+.grid {
+	background-color: red;
+	color: white;
+}
+
+.grid-head {
+	color: rgb(247, 2, 2);
+}
+
+.grid ul {
+	border: 1px solid black;
+}
+.grid ul li {
+	background-color: navy;
+	border: 1px solid black;
+	display: inline;
+}
+
+.grid .small {
+	width: 100px;
+}
+
+.grid .mid {
+	width: 200px;
+}
+
+.grid .large {
+	width: 400px;
+}
+
+.grid-content .line-0{
+	background-color: gray;
+}
+
+.grid-content .line-1{
+	background-color: white;
+}
+
+#list-grid {
+	border: 2px solid blue;
+}

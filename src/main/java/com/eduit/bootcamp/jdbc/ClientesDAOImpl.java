@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import com.eduit.bootcamp.jdbc.domain.Clientes;
 
 public class ClientesDAOImpl implements DAO<Clientes, String> {
 
+	private SimpleDateFormat formater = new SimpleDateFormat("YYYY-mm-dd");
 	private Properties propeties;
 	
 	public ClientesDAOImpl(final Properties prop) {
@@ -96,7 +98,7 @@ public class ClientesDAOImpl implements DAO<Clientes, String> {
 				+ "'"+theEntity.getDocumento()+"',"
 				+ "'"+theEntity.getRazonSocial()+"',"
 				+ "'"+theEntity.getCorreo()+"',"
-				+ "'"+theEntity.getFechaNacimiento()+"',"
+				+ "'"+formater.format(theEntity.getFechaNacimiento())+"',"
 				+ "'"+theEntity.getTelefono()+"');"
 				+ " ";
 		if (statement.execute(sqlProd)) {
@@ -108,7 +110,7 @@ public class ClientesDAOImpl implements DAO<Clientes, String> {
 
 	private Clientes buildCliente(final ResultSet rs) throws Exception {
 		return new Clientes(rs.getString(Clientes.T_DOCUMENTO_FIELD),
-				rs.getString(Clientes.T_DOCUMENTO_FIELD),
+				rs.getString(Clientes.DOCUMENTO_FIELD),
 				rs.getString(Clientes.RAZON_SOCIAL_FIELD),
 				rs.getString(Clientes.CORREO_FIELD),
 				rs.getDate(Clientes.FECHA_NAC_FIELD),

@@ -19,9 +19,11 @@
 		<h2>Agregar usuario</h2>
 		<form action="add" method="POST">
 		  <label for="fname">Nombre:</label><br>
-		  <input type="text" id="fname" name="fname" value="John"><br>
+		  <input type="text" id="fname" name="fname" value="John" /><br>
 		  <label for="lname">Apellido:</label><br>
-		  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+		  <input type="text" id="lname" name="lname" value="Doe" /><br><br>
+		  <label for="date">Fecha:</label><br>
+		  <input type="date" id="date" name="date" /><br><br>
 		  <input type="submit" value="Submit">
 		</form> 
 	</body>
