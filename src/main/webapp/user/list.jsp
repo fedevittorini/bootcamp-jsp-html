@@ -50,7 +50,9 @@
 				%>
 		</section>
 		<footer>
-		<p>pie de pagina</p>
+			<div class="marca">Mi brand de marca</div>
+			<p>copy 2023</p>
+			<a href="#">Contacto</a>
 		</footer>
 	</body>
 </html>

@@ -1,3 +1,25 @@
+header {
+	background-color: olive;
+	margin: 0;
+	padding: 0;
+}
+
+footer {
+	background-color: olive;
+	display: block;
+}
+
+footer * {
+	display: inline;
+}
+
+
+nav {
+	margin: 0;
+	padding: 0;
+	background-color: teal;
+}
+
 nav ul li {
 	display: inline;
 	list-style:none;
@@ -12,31 +34,38 @@ nav ul li a {
 nav ul li a:hover {
 	font-family: Arial, serif;
 	font-size: 30px;
-	color: blueviolet;
+	color: #0080ff;
 	text-decoration: none;
 }
 
 
 .grid {
-	background-color: #B7C3B7;
-	color: white;
+	color: black;
 	display: inline-grid;
 }
 
 .grid-head {
-	background-color: navy;
+	background-color: #B7C3B7;
 	border: 1px solid black;
-	color: rgb(247, 2, 2);
 }
+
+.grid-head div {
+	color: #024722;
+	font-family: Verdana;
+	font-weight: bold;
+}
+
 
 .grid ul {
 	border: 1px solid black;
 	margin: 0;
 	padding: 0;
 }
+
 .grid ul li {
 	display: table-cell;
 	list-style:none;
+	border: 1px solid gray;
 }
 
 .grid ul li .small {
@@ -52,13 +81,13 @@ nav ul li a:hover {
 }
 
 .line-0 {
-	background-color: gray;
+	background-color: #C7C7C7;
 }
 
 .line-1 {
-	background-color: white;
+	background-color: #A0A0A0;
 }
 
 #list-grid {
-	border: 2px solid blue;
+	border: 1px solid black;
 }
