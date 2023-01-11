@@ -79,6 +79,27 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+        <plugin>
+            <groupId>us.hebi.sass</groupId>
+            <artifactId>sass-cli-maven-plugin</artifactId>
+            <version>1.0.2</version>
+            <configuration>
+                <sassVersion>1.57.1</sassVersion>
+                <args> <!-- Any argument that should be forwarded to the sass cli -->
+                    <arg>${project.basedir}/src/main/webapp/sass/styles.scss:${project.basedir}/src/main/webapp/css/styles.css</arg>
+                    <arg>--no-source-map</arg>
+                </args>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>sass-exec</id>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
 		<plugin>
 	        <groupId>org.eclipse.jetty</groupId>
 	    	<artifactId>jetty-maven-plugin</artifactId>
