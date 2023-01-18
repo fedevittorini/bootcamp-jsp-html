@@ -1,6 +1,10 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.Import"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.eduit.bootcamp.jdbc.entity.Clientes"%>
+<%@page import="com.eduit.bootcamp.jdbc.ClientesDAOImpl" %>
+<%@page import="java.util.List" %>
+<%@page import="com.eduit.bootcamp.BootcampApp" %>
 <!DOCTYPE html>
 <html>
 	<head>

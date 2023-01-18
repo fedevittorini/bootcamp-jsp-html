@@ -1,4 +1,4 @@
-package com.eduit.bootcamp.jdbc.domain;
+package com.eduit.bootcamp.jdbc.entity;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import com.eduit.bootcamp.jdbc.domain.Productos;
+import com.eduit.bootcamp.jdbc.entity.Productos;
 
 public class ProductoDAOImpl implements DAO<Productos, Integer> {
 

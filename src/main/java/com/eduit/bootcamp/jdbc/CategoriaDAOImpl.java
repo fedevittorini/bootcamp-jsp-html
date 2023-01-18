@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import com.eduit.bootcamp.jdbc.domain.Categoria;
+import com.eduit.bootcamp.jdbc.entity.Categoria;
 
 public class CategoriaDAOImpl implements DAO<Categoria, Integer> {
 

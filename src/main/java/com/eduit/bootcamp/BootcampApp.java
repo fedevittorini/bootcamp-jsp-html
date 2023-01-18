@@ -7,19 +7,19 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import com.eduit.bootcamp.jdbc.ClientesDAOImpl;
+import com.eduit.bootcamp.jdbc.UsuariosDAOImpl;
 
 public class BootcampApp implements ServletContextListener {
 
+	public static final String APP_PROPS_NAME = "appProperties";
 
     public void contextInitialized(ServletContextEvent servletContextEvent)  {
     	ServletContext ctx = servletContextEvent.getServletContext();
-    	Properties appProperties = null;
-    	ClientesDAOImpl clientesDAOImpl;
     	try {
-			appProperties = PropertiesManager.buildProperties("./src/main/resources/application.properties");
-			clientesDAOImpl = new ClientesDAOImpl(appProperties);
-	    	ctx.setAttribute("appProperties", appProperties);
-	    	ctx.setAttribute("clientesDAOImpl", clientesDAOImpl);
+        	Properties appProperties = PropertiesManager.buildProperties("./src/main/resources/application.properties");
+	    	ctx.setAttribute(APP_PROPS_NAME, appProperties);
+	    	ctx.setAttribute(ClientesDAOImpl.CTX_NAME, new ClientesDAOImpl(appProperties));
+	    	ctx.setAttribute(UsuariosDAOImpl.CTX_NAME, new UsuariosDAOImpl(appProperties));
 	    	System.out.println("Database connection initialized for Application.");
 		} catch (Exception e) {
 			e.printStackTrace();

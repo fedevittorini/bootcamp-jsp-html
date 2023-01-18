@@ -1,16 +1,11 @@
-<%@page import="org.apache.jasper.tagplugins.jstl.core.Import"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="com.eduit.bootcamp.jdbc.entity.Clientes"%>
-<%@page import="com.eduit.bootcamp.jdbc.ClientesDAOImpl"%>
-<%@page import="java.util.List"%>
-<%@page import="com.eduit.bootcamp.BootcampApp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Listado de usuarios</title>
+<title>Listado de clientes</title>
 <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
@@ -21,8 +16,8 @@
 			<div class="col-m-2 col-3">
 				<!-- ACA VA EL MENU -->
 				<ul>
-					<li><a href="/bootcamp-jsp-html/user/add">Alta</a></li>
-					<li><a href="/bootcamp-jsp-html/user/list">Listado</a></li>
+					<li><a href="/bootcamp-jsp-html/client/add">Alta</a></li>
+					<li><a href="/bootcamp-jsp-html/client/list">Listado</a></li>
 				</ul>
 			</div>
 			<div class="col-m-10 col-9">
@@ -31,7 +26,7 @@
 					<div class="col">
 						<div class="table-responsive">
 							<table class="table table-striped table-hover" id="table">
-								<caption class="caption-top">Listado de usuarios</caption>
+								<caption class="caption-top">Listado de clientes</caption>
 								<thead>
 									<tr>
 										<th scope="col">T. Doc</th>
@@ -80,14 +75,16 @@
 			        request.setRequestHeader("Accept", 'application/json');
 			    },
 			    dataType: "json",
-			    url: "http://localhost:8080/bootcamp-jsp-html/user/list",
+			    url: "http://localhost:8080/bootcamp-jsp-html/client/list",
 			    success: function(data) {
 			    	let table = document.getElementById('table')
 			    	let tbodyRef = table.getElementsByTagName('tbody')[0];
 					
 					for (let i=0; i< data.data.length; i++) {
 						let dataRow = data.data[i];
+						
 						let row = tbodyRef.insertRow();
+						
 						let tDocCel = row.insertCell(0);
 						let docCel = row.insertCell(1);
 						let rSocCel = row.insertCell(2);
@@ -97,10 +94,12 @@
 						let editCel = row.insertCell(6);
 						let delCel = row.insertCell(7);
 						
-						tDocCel.innerHTML = dataRow["id"];
-						docCel.innerHTML = dataRow["username"];
-						rSocCel.innerHTML = dataRow["first_name"];
-						correoCel.innerHTML = dataRow["last_name"];
+						tDocCel.innerHTML = dataRow["tipoDocumento"];
+						docCel.innerHTML = dataRow["documento"];
+						rSocCel.innerHTML = dataRow["razonSocial"];
+						correoCel.innerHTML = dataRow["correo"];
+						fNacCel.innerHTML = dataRow["fechaNacimiento"];
+						telCel.innerHTML = dataRow["telefono"];
 						editCel.innerHTML = "<a href=\"/bootcamp-jsp-html/user/edit/\">Edit</a>";
 						delCel.innerHTML = "<a href=\"/bootcamp-jsp-html/user/delete/\">Delete</a>";
 					}

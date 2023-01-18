@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.eduit.bootcamp.jdbc.ClientesDAOImpl;
 import com.eduit.bootcamp.jdbc.entity.Clientes;
 
-public class UserAddServlet extends HttpServlet {
+public class ClientAddServlet extends HttpServlet {
 	
 	private final SimpleDateFormat formater =  new SimpleDateFormat("yyyy-mm-dd");
 	
-	public UserAddServlet( ) {
+	public ClientAddServlet( ) {
 		
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getServletContext().getRequestDispatcher("/user/add.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/client/add.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,11 +39,11 @@ public class UserAddServlet extends HttpServlet {
 		} catch (ParseException e) {
 			request.setAttribute("r_status", "ERROR");
 			request.setAttribute("r_msg", e.getMessage());
-			request.getServletContext().getRequestDispatcher("/user/list.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/client/list.jsp").forward(request, response);
 			return;
 		}
 		
-		ClientesDAOImpl clientesDAOImpl = (ClientesDAOImpl) request.getServletContext().getAttribute("clientesDAOImpl");
+		ClientesDAOImpl clientesDAOImpl = (ClientesDAOImpl) request.getServletContext().getAttribute(ClientesDAOImpl.CTX_NAME);
 		Clientes c = new Clientes(tdoc, doc, rsocial, correo, fechaNac, tel);
 		try {
 			if (clientesDAOImpl.save(c) != null) {
@@ -56,6 +56,6 @@ public class UserAddServlet extends HttpServlet {
 			request.setAttribute("r_status", "ERROR");
 			request.setAttribute("r_msg", e.getMessage());
 		}
-		request.getServletContext().getRequestDispatcher("/user/list.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/client/list.jsp").forward(request, response);
     }
 }

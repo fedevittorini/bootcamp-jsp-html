@@ -10,10 +10,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import com.eduit.bootcamp.jdbc.domain.Clientes;
+import com.eduit.bootcamp.jdbc.entity.Clientes;
 
 public class ClientesDAOImpl implements DAO<Clientes, String> {
 
+	public static final String CTX_NAME = "clientesDAOImpl";
 	private SimpleDateFormat formater = new SimpleDateFormat("YYYY-mm-dd");
 	private Properties propeties;
 	
